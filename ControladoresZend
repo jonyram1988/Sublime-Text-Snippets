@@ -1,0 +1,24 @@
+<snippet>
+	<content><![CDATA[
+	public function ${1:this}Action(){
+		\$this->_helper->layout()->disableLayout();
+		\$this->_helper->viewRenderer->setNoRender(true);
+		\$resultado = \$debug = false;
+		// validacion de parametros
+		if(\$this->_request->isPost()):
+			// parametros
+			\$parametros = \$this->_request->getPost();
+			try {
+			} catch (Exception \$e) {
+				\$debug = \$e->getMessage();
+			}
+		endif;
+		// respuesta a la vista
+		echo json_encode(array('resultado'=>\$resultado,'debug'=>\$debug));
+	}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>ControladoresZend</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
