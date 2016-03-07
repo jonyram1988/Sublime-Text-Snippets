@@ -8,6 +8,7 @@
 		if(\$this->_request->isPost()):
 			// parametros
 			\$parametros = \$this->_request->getPost();
+			// procesar informacion
 			try {
 			} catch (Exception \$e) {
 				\$debug = \$e->getMessage();
