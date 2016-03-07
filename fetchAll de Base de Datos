@@ -1,0 +1,26 @@
+<snippet>
+	<content><![CDATA[
+// consulta a la base de datos
+\$consulta = \$this->select()
+	->setIntegrityCheck(false)
+	->from(array('${1:alias}'=>\$this->_name), array(
+		'ID'=>,
+		'NOMBRE'=>
+	))
+	->where('${2:condicional}');
+// validacion de resultados
+if(\$consulta->query()->rowCount()>0):
+	\$resultados = array();
+	// recorrer los resultados
+	foreach(\$consulta->query()->fetchAll(Zend_Db::FETCH_OBJ) as \$dato):
+		\$fila = new stdClass();
+		\$resultados[] = \$fila;
+	endforeach;
+	return \$resultados;
+else: return false; endif;
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>listarDatos</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
