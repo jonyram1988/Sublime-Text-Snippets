@@ -7,5 +7,5 @@
 		endif;
 	}
 ]]></content>
-	<tabTrigger>VistaControlladoresModal</tabTrigger>
+	<tabTrigger>ControladoresZendModal</tabTrigger>
 </snippet>
