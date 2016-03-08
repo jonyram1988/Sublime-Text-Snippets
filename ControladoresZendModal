@@ -1,11 +1,11 @@
 <snippet>
 	<content><![CDATA[
-	public function ${1:this}Action(){
-		\$this->_helper->layout()->disableLayout();
-		// validacion de parametros
-		if(\$this->_request->isPost()):
-		endif;
-	}
+public function ${1:this}Action(){
+	\$this->_helper->layout()->disableLayout();
+	// validacion de parametros
+	if(\$this->_request->isPost()):
+	endif;
+}
 ]]></content>
 	<tabTrigger>ControladoresZendModal</tabTrigger>
 </snippet>
