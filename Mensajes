@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+if(json.resultado){
+    // mensaje de exito
+    Apps.toastr_mensaje('success');
+}else{
+    // diferenciacion de mensajes errores
+    if(json.debug){
+        Apps.toastr_mensaje('error',json.debug);
+    }else{
+        Apps.toastr_mensaje('error');
+    }
+}
+]]></content>
+	<tabTrigger>Mensajes</tabTrigger>
+</snippet>
