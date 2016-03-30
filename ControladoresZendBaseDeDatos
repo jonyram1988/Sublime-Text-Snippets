@@ -15,8 +15,9 @@ public function ${1:this}Action(){
 		}
 	endif;
 	// respuesta a la vista
-	echo json_encode(array('resultado'=>\$resultado,'debug'=>\$debug));
+	echo json_encode(array('resultado'=>((\$debug)?false:\$resultado),'debug'=>\$debug));
 }
 ]]></content>
 	<tabTrigger>ControladoresZendBaseDeDatos</tabTrigger>
 </snippet>
+
