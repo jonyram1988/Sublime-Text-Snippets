@@ -11,6 +11,8 @@ if(json.resultado){
         Apps.toastr_mensaje('error');
     }
 }
+// actualizo datatable
+wrapper.find('table').DataTable().draw();
 ]]></content>
 	<tabTrigger>Mensajes</tabTrigger>
 </snippet>
