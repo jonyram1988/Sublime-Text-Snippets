@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+	public function put(\$datos,\$condiciones){
+		if(is_array(\$datos) && is_array(\$condiciones)):
+			\$this->_name = '${1:this}';
+			return (\$this->update(\$datos,\$condiciones))?true:false;
+		else: return false; endif;
+	}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>DbPut</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
