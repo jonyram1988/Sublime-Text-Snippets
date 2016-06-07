@@ -3,7 +3,7 @@
 public function ${1:this}Action(){
 	\$this->_helper->layout()->disableLayout();
 	\$this->_helper->viewRenderer->setNoRender(true);
-	\$resultado = \$debug = false;
+	\$status = \$developerMessage = \$errorCode = false;
 	// validacion de parametros
 	if(\$this->_request->isPost()):
 		// parametros
@@ -11,11 +11,11 @@ public function ${1:this}Action(){
 		// procesar informacion
 		try {
 		} catch (Exception \$e) {
-			\$debug = \$e->getMessage();
+			\$developerMessage = \$e->getMessage();
 		}
 	endif;
 	// respuesta a la vista
-	echo json_encode(array('resultado'=>((\$debug)?false:\$resultado),'debug'=>\$debug));
+	echo json_encode(array('status'=>((\$developerMessage)?false:\$status),'developerMessage'=>\$developerMessage,'userMessage'=>\$userMessage,'errorCode'=>\$errorCode));
 }
 ]]></content>
 	<tabTrigger>ControladoresZendBaseDeDatos</tabTrigger>
