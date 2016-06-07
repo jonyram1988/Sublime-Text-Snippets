@@ -1,12 +1,12 @@
 <snippet>
 	<content><![CDATA[
-if(json.resultado){
+if(json.status){
     // mensaje de exito
     Apps.toastr_mensaje('success');
 }else{
     // diferenciacion de mensajes errores
-    if(json.debug){
-        Apps.toastr_mensaje('error',json.debug);
+    if(json.userMessage || json.developerMessage){
+        Apps.toastr_mensaje('error',json.userMessage);
     }else{
         Apps.toastr_mensaje('error');
     }
