@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+	public function delete(\$condiciones){
+		if(is_array(\$condiciones)):
+			\$this->_name = 'PERIODO';
+			return (\$this->delete(\$condiciones))?true:false;
+		else: return false; endif;
+	}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>DbDelete</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
