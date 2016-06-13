@@ -2,13 +2,14 @@
 	<content><![CDATA[
 if(json.status){
     // mensaje de exito
-    Apps.toastr_mensaje('success');
+    toastr["success"](_mensajeExito,_tituloExito);
 }else{
     // diferenciacion de mensajes errores
     if(json.userMessage || json.developerMessage){
         Apps.toastr_mensaje('error',json.userMessage);
+        toastr["error"](json.userMessage,_tituloError);
     }else{
-        Apps.toastr_mensaje('error');
+        toastr["error"](_mensajeError,_tituloError);
     }
 }
 // actualizo datatable
