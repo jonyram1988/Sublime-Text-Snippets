@@ -6,7 +6,6 @@ if(json.status){
 }else{
     // diferenciacion de mensajes errores
     if(json.userMessage || json.developerMessage){
-        Apps.toastr_mensaje('error',json.userMessage);
         toastr["error"](json.userMessage,_tituloError);
     }else{
         toastr["error"](_mensajeError,_tituloError);
