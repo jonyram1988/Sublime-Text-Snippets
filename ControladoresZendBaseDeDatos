@@ -6,12 +6,14 @@ public function ${1:this}Action(){
 	\$status = \$developerMessage = \$errorCode = \$userMessage = false;
 	// validacion de parametros
 	if(\$this->_request->isPost()):
-		// parametros
-		\$parametros = \$this->_request->getPost();
 		// procesar informacion
 		try {
+			// parametros
+			\$parametros = \$this->_request->getPost();
 		} catch (Exception \$e) {
 			\$developerMessage = \$e->getMessage();
+			\$errorCode = '0x001';
+			\$userMessage = \$this->_MENSAJE_ERROR;
 		}
 	endif;
 	// respuesta a la vista
@@ -20,4 +22,3 @@ public function ${1:this}Action(){
 ]]></content>
 	<tabTrigger>ControladoresZendBaseDeDatos</tabTrigger>
 </snippet>
-
