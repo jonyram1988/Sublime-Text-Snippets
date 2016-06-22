@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA[
+<div class="portlet" id="cuerpo">
+	<div class="portlet-title">
+		<div class="caption"></div>
+		<div class="actions">
+		</div>
+	</div>
+	<div class="portlet-body">
+	</div>
+</div>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>PortletFormato</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
