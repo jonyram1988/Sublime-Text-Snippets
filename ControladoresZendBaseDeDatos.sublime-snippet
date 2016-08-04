@@ -12,7 +12,7 @@ public function ${1:this}Action(){
 			\$parametros = \$this->_request->getPost();
 		} catch (Exception \$e) {
 			\$developerMessage = \$e->getMessage();
-			\$errorCode = '0x001';
+			\$errorCode = __FUNCTION__;
 			\$userMessage = \$this->_MENSAJE_ERROR;
 		}
 	endif;
