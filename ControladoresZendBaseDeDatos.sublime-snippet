@@ -4,21 +4,22 @@ public function ${1:this}Action(){
 	\$this->_helper->layout()->disableLayout();
 	\$this->_helper->viewRenderer->setNoRender(true);
 	\$status = \$developerMessage = \$errorCode = \$userMessage = false;
-	// validacion de parametros
+	// validation params
 	if(\$this->_request->isPost()):
-		// procesar informacion
+		// process data
 		try {
-			// parametros
-			\$parametros = \$this->_request->getPost();
+			// params
+			\$params = \$this->_request->getPost();
 		} catch (Exception \$e) {
 			\$developerMessage = \$e->getMessage();
 			\$errorCode = __FUNCTION__;
 			\$userMessage = \$this->_MENSAJE_ERROR;
 		}
 	endif;
-	// respuesta a la vista
+	// response view
 	echo json_encode(array('status'=>((\$developerMessage)?false:\$status),'developerMessage'=>\$developerMessage,'userMessage'=>\$userMessage,'errorCode'=>\$errorCode));
 }
 ]]></content>
 	<tabTrigger>ControladoresZendBaseDeDatos</tabTrigger>
 </snippet>
+
