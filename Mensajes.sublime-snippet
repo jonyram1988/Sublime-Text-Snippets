@@ -2,7 +2,15 @@
 	<content><![CDATA[
 if(json.status){
     // success Message
-    toastr["success"](_successMessage,_successTitle);
+    toastr["success"](_successMessage, _successTitle, {
+        onHidden: function() {
+        	if(json.redirect){
+            		location.href = json.redirect;
+        	}else{
+			window.location.reload();        	
+        	}
+        }
+    });
 }else{
     // type of messages error
     if(json.userMessage || json.developerMessage){
