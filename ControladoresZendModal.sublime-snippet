@@ -2,7 +2,7 @@
 	<content><![CDATA[
 public function ${1:this}Action(){
 	\$this->_helper->layout()->disableLayout();
-	// validacion de parametros
+	// validation params
 	if(\$this->_request->isPost()):
 	endif;
 }
