@@ -1,23 +1,24 @@
 <snippet>
 	<content><![CDATA[
-// consulta a la base de datos
-\$consulta = \$this->select()
+// query
+\$query = \$this->select()
 	->setIntegrityCheck(false)
 	->from(array('${1:alias}'=>\$this->_name), array(
-		'ID'=>,
-		'NOMBRE'=>
+		'id'=>,
+		'name'=>
 	))
-	->where('${2:condicional}');
-// validacion de resultados
-if(\$consulta->query()->rowCount()>0):
-	\$resultados = array();
-	// recorrer los resultados
-	foreach(\$consulta->query()->fetchAll(Zend_Db::FETCH_OBJ) as \$dato):
-		\$fila = new stdClass();
-		\$resultados[] = \$fila;
+	->where('${2:where}');
+// validation results
+if(\$query->query()->rowCount()>0):
+	\$results = array();
+	// construct array with data results
+	foreach(\$query->query()->fetchAll(Zend_Db::FETCH_OBJ) as \$row):
+		\$tmp = new stdClass();
+		\$results[] = \$tmp;
 	endforeach;
-	return \$resultados;
+	return \$results;
 else: return false; endif;
 ]]></content>
 	<tabTrigger>FetchAllBaseDeDatos</tabTrigger>
 </snippet>
+
