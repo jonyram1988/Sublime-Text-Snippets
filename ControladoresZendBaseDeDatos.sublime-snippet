@@ -3,7 +3,7 @@
 public function ${1:this}Action(){
 	\$this->_helper->layout()->disableLayout();
 	\$this->_helper->viewRenderer->setNoRender(true);
-	\$status = \$developerMessage = \$errorCode = \$userMessage = false;
+	\$status = \$developerMessage = \$errorCode = \$userMessage = \$redirect = false;
 	// validation params
 	if(\$this->_request->isPost()):
 		// process data
@@ -17,7 +17,7 @@ public function ${1:this}Action(){
 		}
 	endif;
 	// response view
-	echo json_encode(array('status'=>((\$developerMessage)?false:\$status),'developerMessage'=>\$developerMessage,'userMessage'=>\$userMessage,'errorCode'=>\$errorCode));
+	echo json_encode(array('status'=>((\$developerMessage)?false:\$status), 'developerMessage'=>\$developerMessage, 'userMessage'=>\$userMessage, 'errorCode'=>\$errorCode, 'redirect'=>\$redirect));
 }
 ]]></content>
 	<tabTrigger>ControladoresZendBaseDeDatos</tabTrigger>
