@@ -5,9 +5,9 @@ if(json.status){
     toastr["success"](_successMessage, _successTitle, {
         onHidden: function() {
         	if(json.redirect){
-            		location.href = json.redirect;
+        		location.href = json.redirect;
         	}else{
-			window.location.reload();        	
+			 window.location.reload();        	
         	}
         }
     });
