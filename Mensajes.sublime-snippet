@@ -1,18 +1,24 @@
 <snippet>
 	<content><![CDATA[
 if(json.status){
-    // mensaje de exito
-    toastr["success"](_mensajeExito,_tituloExito);
+    // success Message
+    toastr["success"](_successMessage,_successTitle);
 }else{
-    // diferenciacion de mensajes errores
+    // type of messages error
     if(json.userMessage || json.developerMessage){
-        toastr["error"](json.userMessage,_tituloError);
+    	// show message user
+        toastr["error"](json.userMessage,_errorTitle);
+        // show message developers
+        if(json.developerMessage){
+       		console.log(json.developerMessage);
+        }
     }else{
-        toastr["error"](_mensajeError,_tituloError);
+        toastr["error"](_errorTitle,_errorMessage);
     }
 }
-// actualizo datatable
+// refresh datatable (optional)
 wrapper.find('table').DataTable().draw();
 ]]></content>
 	<tabTrigger>Mensajes</tabTrigger>
 </snippet>
+
