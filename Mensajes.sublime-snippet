@@ -21,7 +21,7 @@ if(json.status){
        		console.log(json.developerMessage);
         }
     }else{
-        toastr["error"](_errorTitle,_errorMessage);
+        toastr["error"](_errorMessage, _errorTitle);
     }
 }
 // refresh datatable (optional)
